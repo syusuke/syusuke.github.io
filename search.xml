@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[Android艺术探索第一章]]></title>
+      <url>%2F2016%2F11%2F19%2FAndroid%E8%89%BA%E6%9C%AF%E6%8E%A2%E7%B4%A2%E7%AC%AC%E4%B8%80%E7%AB%A0%2F</url>
+      <content type="text"><![CDATA[一.生命周期 onCreate: 初始化工作 onStart: 已经可见,但是没在前台,无法交互 onResume:已经可见而且可以交互 onPause: Activity正在停止,正常情况下onStop()会紧接着执行,如果快速再次回到Activity,就会执行onResume方法,这种情况比较极端.这里不适合耗时操作,可以存储数据,停止动画等操作, onStop: 即将停止.不能耗时操作 onDestory: Activity 就要被销毁,这是最后一个回调,做为资源的回收和资源的释放. onRestart: Activity正在启动,从从不可见变为可见 1.1 正常下的生命周期(1).第一次启动onCreate-&gt;onStart-&gt;onResume (2).打开新Activity或者Home时.onPause-&gt;onStop PS:新Activity 透明的主题,那么旧的Activity的onStop不会被执行 (3).再次回到ActivityonRestart-&gt;onStart-&gt;onResume (4).back键时onPause-&gt;onStop-&gt;onDestory onCreate &lt;=&gt; onDestory :Activity 的 创建 销毁 onStart &lt;=&gt; onStop Activity 可见上来说 onResume &lt;=&gt; onPause Activity 是否在前台 Activity A 启动 Activity B 的 生命周期 A:onPause B:onCreate B:onStart B:onResume A:onStop 1.2 异常下的生命周期 Configuration发生改变 (1)资源配置发生改变配置发生改变: Activity-&gt;意外发生-&gt;执行onSaveInstanceState-&gt;onDestoryonSaveInstanceState: 在onStop之前,但onPause之前或之后,都有可能 重建Activity: Activity-&gt;onCreate-&gt;onRestoreInstanceStateonRestoreInstanceState : 在onStart之后 (2)系统内存不足Activity优先级: 前台Activity 可见Activity,但非前台Activity,如Dialog 后台Activity 也可指定当系统配置发生改变时,不重建 Activity 常用配置locale | orientation| keyboardHidden123&lt;activityandorid:configChanges=&quot;locale|orientation|keyboardHidden&quot;&gt;&lt;/activity&gt; 二.Activity启动模式]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[Hello World]]></title>
       <url>%2F2016%2F11%2F19%2Fhello-world%2F</url>
       <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
