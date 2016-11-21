@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -81,7 +81,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
 
 
@@ -104,7 +104,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -396,55 +396,14 @@
 
       
         
-          
-            <h1 id="一-生命周期"><a href="#一-生命周期" class="headerlink" title="一.生命周期"></a>一.生命周期</h1><img src="/2016/11/19/Android艺术探索第一章/1465907050663IMG_20160614_202300.jpg" alt="1465907050663IMG_20160614_202300.jpg" title="">
-<ul>
-<li><code>onCreate</code>: 初始化工作</li>
-<li><code>onStart</code>: 已经可见,但是没在前台,无法交互</li>
-<li><code>onResume</code>:已经可见而且可以交互</li>
-<li><code>onPause</code>: Activity正在停止,<code>正常情况下onStop()会紧接着执行</code>,如果快速再次回到Activity,就会执行<code>onResume</code>方法,这种情况比较极端.这里不适合耗时操作,可以<em>存储数据,停止动画等操作</em>,</li>
-<li><code>onStop</code>: 即将停止.不能耗时操作</li>
-<li><code>onDestory</code>: Activity 就要被销毁,这是最后一个回调,做为资源的回收和资源的释放.</li>
-</ul>
-<p><code>onRestart</code>: Activity正在启动,从<strong>从不可见变为可见</strong></p>
-<h2 id="1-1-正常下的生命周期"><a href="#1-1-正常下的生命周期" class="headerlink" title="1.1 正常下的生命周期"></a>1.1 正常下的生命周期</h2><h3 id="1-第一次启动"><a href="#1-第一次启动" class="headerlink" title="(1).第一次启动"></a>(1).第一次启动</h3><p>onCreate-&gt;onStart-&gt;onResume</p>
-<h3 id="2-打开新Activity或者Home时"><a href="#2-打开新Activity或者Home时" class="headerlink" title="(2).打开新Activity或者Home时."></a>(2).打开新Activity或者Home时.</h3><p>onPause-&gt;onStop</p>
-<blockquote>
-<p>PS:新Activity 透明的主题,那么旧的Activity的<code>onStop</code>不会被执行</p>
-</blockquote>
-<h3 id="3-再次回到Activity"><a href="#3-再次回到Activity" class="headerlink" title="(3).再次回到Activity"></a>(3).再次回到Activity</h3><p>onRestart-&gt;onStart-&gt;onResume</p>
-<h3 id="4-back键时"><a href="#4-back键时" class="headerlink" title="(4).back键时"></a>(4).back键时</h3><p>onPause-&gt;onStop-&gt;onDestory</p>
-<hr>
-<ol>
-<li><strong>onCreate &lt;=&gt; onDestory </strong>:Activity 的 创建 销毁</li>
-<li><strong>onStart &lt;=&gt; onStop</strong> Activity 可见上来说</li>
-<li><strong>onResume &lt;=&gt; onPause</strong> Activity 是否在前台</li>
-</ol>
-<blockquote>
-<p>Activity A 启动 Activity B 的 生命周期</p>
-<ol>
-<li>A:onPause</li>
-<li>B:onCreate</li>
-<li>B:onStart</li>
-<li>B:onResume</li>
-<li>A:onStop</li>
-</ol>
-</blockquote>
-<h2 id="1-2-异常下的生命周期"><a href="#1-2-异常下的生命周期" class="headerlink" title="1.2 异常下的生命周期"></a>1.2 异常下的生命周期</h2><blockquote>
-<p>Configuration发生改变</p>
-</blockquote>
-<h3 id="1-资源配置发生改变"><a href="#1-资源配置发生改变" class="headerlink" title="(1)资源配置发生改变"></a>(1)资源配置发生改变</h3><p>配置发生改变: Activity-&gt;意外发生-&gt;执行<code>onSaveInstanceState</code>-&gt;<code>onDestory</code><br><code>onSaveInstanceState</code>: 在<code>onStop</code>之前,但<code>onPause</code>之前或之后,都有可能</p>
-<p>重建Activity: Activity-&gt;<code>onCreate</code>-&gt;<code>onRestoreInstanceState</code><br><code>onRestoreInstanceState</code> : 在<code>onStart</code>之后</p>
-<h3 id="2-系统内存不足"><a href="#2-系统内存不足" class="headerlink" title="(2)系统内存不足"></a>(2)系统内存不足</h3><p>Activity优先级:</p>
-<ol>
-<li>前台Activity</li>
-<li>可见Activity,但非前台Activity,如<code>Dialog</code></li>
-<li>后台Activity</li>
-</ol>
-<p>也可指定<em>当系统配置发生改变时,不重建 Activity</em></p>
-<p>常用配置<br>locale | orientation| keyboardHidden<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;activity</div><div class="line">andorid:configChanges=&quot;locale|orientation|keyboardHidden&quot;&gt;</div><div class="line">&lt;/activity&gt;</div></pre></td></tr></table></figure></p>
-<h1 id="二-Activity启动模式"><a href="#二-Activity启动模式" class="headerlink" title="二.Activity启动模式"></a>二.Activity启动模式</h1>
-          
+          <h1 id="一-生命周期"><a href="#一-生命周期" class="headerlink" title="一.生命周期"></a>一.生命周期</h1><img src="/2016/11/19/Android艺术探索第一章/1465907050663IMG_20160614_202300.jpg" alt="1465907050663IMG_20160614_202300.jpg" title="">
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/11/19/Android艺术探索第一章/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -583,30 +542,14 @@
 
       
         
-          
-            <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>按照官网就可以<br>我选择的主题是:<code>next</code></p>
-<h2 id="Config"><a href="#Config" class="headerlink" title="Config"></a>Config</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">// Site</div><div class="line"></div><div class="line">title: 琴声悠扬</div><div class="line"></div><div class="line">subtitle: As An Developer!</div><div class="line"></div><div class="line">description: 当你孤单你会想起谁?</div><div class="line"></div><div class="line">author: 琴声悠扬</div><div class="line"></div><div class="line">language: zh-Hans</div><div class="line"></div><div class="line">timezone: Asia/Shanghai</div><div class="line"></div><div class="line">avatar: /images/avatar.png</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-<h2 id="创建tags-categories生成index-html"><a href="#创建tags-categories生成index-html" class="headerlink" title="创建tags,categories生成index.html"></a>创建tags,categories生成index.html</h2><h2 id="hexo-new-page-quot-tags-quot"><a href="#hexo-new-page-quot-tags-quot" class="headerlink" title="hexo new page &quot;tags&quot;"></a><code>hexo new page &quot;tags&quot;</code></h2><p>title: Tagcloud</p>
-<p>date: 2014-12-22 12:39:04</p>
-<p>type: “tags”</p>
-<hr>
-<h2 id="hexo-new-page-quot-categories-quot"><a href="#hexo-new-page-quot-categories-quot" class="headerlink" title="hexo new page &quot;categories&quot;"></a><code>hexo new page &quot;categories&quot;</code></h2><p>title: Tagcloud</p>
-<p>date: 2014-12-22 12:39:04</p>
-<p>type: “categories”</p>
-<hr>
-<p>注意打开<br>menu<br>菜单下的注释</p>
-<p>hexo g<br>hexo d</p>
-<p>就可以了.</p>
-
-          
+          <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>按照官网就可以<br>我选择的主题是:<code>next</code></p>
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/11/19/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -747,7 +690,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 
@@ -813,13 +756,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
-
-
 
   
 
