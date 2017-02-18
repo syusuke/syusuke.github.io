@@ -4,6 +4,32 @@
 
     
   <url>
+    <loc>http://www.gson8.com/2017/02/18/1-Spring-Bean-DI/</loc>
+    <lastmod>2017-02-18T06:57:36.438Z</lastmod>
+    <data>
+        <display>
+        <title>1.Spring-Bean-DI</title>
+        <pubTime>2017-02-18T06:54:59.000Z</pubTime>
+        
+        <tag>Spring</tag>
+         
+        <tag>基础</tag>
+         
+        <tag>JAVA</tag>
+         
+        <tag>读书</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring" url="http://www.gson8.com/categories/Spring/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.gson8.com/2017/02/07/PHP%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F/</loc>
     <lastmod>2017-02-07T12:50:43.146Z</lastmod>
     <data>
@@ -55,11 +81,11 @@
         <title>Java 单例模式</title>
         <pubTime>2017-02-05T09:07:34.000Z</pubTime>
         
+        <tag>基础</tag>
+         
         <tag>JAVA</tag>
          
         <tag>Resume</tag>
-         
-        <tag>基础</tag>
          
         <tag>设计模式</tag>
          
@@ -81,13 +107,13 @@
         <title>Java IO 文件操作</title>
         <pubTime>2017-02-05T06:05:05.000Z</pubTime>
         
-        <tag>IO</tag>
+        <tag>基础</tag>
          
         <tag>JAVA</tag>
          
         <tag>Resume</tag>
          
-        <tag>基础</tag>
+        <tag>IO</tag>
          
          
            
@@ -155,9 +181,9 @@
         <title>Android艺术探索第一章</title>
         <pubTime>2016-11-19T12:59:04.000Z</pubTime>
         
-        <tag>Android</tag>
-         
         <tag>读书</tag>
+         
+        <tag>Android</tag>
          
         <tag>Android艺术探索</tag>
          
