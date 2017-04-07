@@ -379,6 +379,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/理论/" itemprop="url" rel="index">
+                    <span itemprop="name">理论</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -416,9 +438,18 @@
 
       
         
-          
-            
-          
+          <h1 id="2017-3JAVA面试总结"><a href="#2017-3JAVA面试总结" class="headerlink" title="2017.3JAVA面试总结"></a>2017.3JAVA面试总结</h1><blockquote>
+<p>  这里是总结我这个月到2017-3的面试情况。</p>
+</blockquote>
+<h2 id="概率高"><a href="#概率高" class="headerlink" title="概率高"></a>概率高</h2><h3 id="1-代码的加载顺序"><a href="#1-代码的加载顺序" class="headerlink" title="1. 代码的加载顺序"></a>1. 代码的加载顺序</h3><p><code>static</code>: 肯定要加载的，从父类开始，只到运行就会加载。无论有没有用到都会运行</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">PLoad</span> </span>&#123;</div><div class="line">    &#123;</div><div class="line">        System.out.println(<span class="string">"PLoad class"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">static</span> &#123;</div><div class="line">        System.out.println(<span class="string">"PLoad static"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">PLoad</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"PLoad Construtor"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MethodLoad</span> <span class="keyword">extends</span> <span class="title">PLoad</span> </span>&#123;</div><div class="line">    &#123;</div><div class="line">        System.out.println(<span class="string">"MethodLoad class"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">static</span> &#123;</div><div class="line">        System.out.println(<span class="string">"MethodLoad static "</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MethodLoad</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"MethodLoad Construtor"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="comment">//分情况</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/29/2017-3JAVA面试总结/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2000,7 +2031,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>

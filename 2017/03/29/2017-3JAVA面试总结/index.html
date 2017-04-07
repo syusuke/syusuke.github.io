@@ -72,7 +72,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JAVA,Resume," />
 
 
 
@@ -88,16 +88,30 @@
 
 
 
-<meta name="description" content="你的指尖拥有改变世界的能力!">
+<meta name="description" content="2017.3JAVA面试总结
+  这里是总结我这个月到2017-3的面试情况。
+
+概率高1. 代码的加载顺序static: 肯定要加载的，从父类开始，只到运行就会加载。无论有没有用到都会运行
+1234567891011121314151617181920212223242526class PLoad &amp;#123;    &amp;#123;        System.out.println(&quot;PLoad">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2017.3JAVA面试总结">
 <meta property="og:url" content="http://www.gson8.com/2017/03/29/2017-3JAVA面试总结/index.html">
 <meta property="og:site_name" content="琴声悠扬">
-<meta property="og:description" content="你的指尖拥有改变世界的能力!">
-<meta property="og:updated_time" content="2017-03-29T09:26:35.638Z">
+<meta property="og:description" content="2017.3JAVA面试总结
+  这里是总结我这个月到2017-3的面试情况。
+
+概率高1. 代码的加载顺序static: 肯定要加载的，从父类开始，只到运行就会加载。无论有没有用到都会运行
+1234567891011121314151617181920212223242526class PLoad &amp;#123;    &amp;#123;        System.out.println(&quot;PLoad">
+<meta property="og:image" content="http://www.gson8.com/2017/03/29/2017-3JAVA面试总结/TCP_IP.jpg">
+<meta property="og:updated_time" content="2017-04-07T06:48:30.104Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2017.3JAVA面试总结">
-<meta name="twitter:description" content="你的指尖拥有改变世界的能力!">
+<meta name="twitter:description" content="2017.3JAVA面试总结
+  这里是总结我这个月到2017-3的面试情况。
+
+概率高1. 代码的加载顺序static: 肯定要加载的，从父类开始，只到运行就会加载。无论有没有用到都会运行
+1234567891011121314151617181920212223242526class PLoad &amp;#123;    &amp;#123;        System.out.println(&quot;PLoad">
+<meta name="twitter:image" content="http://www.gson8.com/2017/03/29/2017-3JAVA面试总结/TCP_IP.jpg">
 
 
 
@@ -375,6 +389,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/理论/" itemprop="url" rel="index">
+                    <span itemprop="name">理论</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -421,7 +457,140 @@
       
 
       
-        
+        <h1 id="2017-3JAVA面试总结"><a href="#2017-3JAVA面试总结" class="headerlink" title="2017.3JAVA面试总结"></a>2017.3JAVA面试总结</h1><blockquote>
+<p>  这里是总结我这个月到2017-3的面试情况。</p>
+</blockquote>
+<h2 id="概率高"><a href="#概率高" class="headerlink" title="概率高"></a>概率高</h2><h3 id="1-代码的加载顺序"><a href="#1-代码的加载顺序" class="headerlink" title="1. 代码的加载顺序"></a>1. 代码的加载顺序</h3><p><code>static</code>: 肯定要加载的，从父类开始，只到运行就会加载。无论有没有用到都会运行</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">PLoad</span> </span>&#123;</div><div class="line">    &#123;</div><div class="line">        System.out.println(<span class="string">"PLoad class"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">static</span> &#123;</div><div class="line">        System.out.println(<span class="string">"PLoad static"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">PLoad</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"PLoad Construtor"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MethodLoad</span> <span class="keyword">extends</span> <span class="title">PLoad</span> </span>&#123;</div><div class="line">    &#123;</div><div class="line">        System.out.println(<span class="string">"MethodLoad class"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">static</span> &#123;</div><div class="line">        System.out.println(<span class="string">"MethodLoad static "</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MethodLoad</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"MethodLoad Construtor"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="comment">//分情况</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h4 id="1-创建父类"><a href="#1-创建父类" class="headerlink" title="1).创建父类"></a>1).创建父类</h4><p><strong>main（）方法</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">	PLoad pLoad = <span class="keyword">new</span> PLoad();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>输出结果</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">PLoad static</div><div class="line">MethodLoad static </div><div class="line">PLoad class</div><div class="line">PLoad Construtor</div></pre></td></tr></table></figure>
+<h4 id="2-创建子类"><a href="#2-创建子类" class="headerlink" title="2). 创建子类"></a>2). 创建子类</h4><p><strong>main（）方法</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">	MethodLoad pLoad = <span class="keyword">new</span> MethodLoad();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>输出结果</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">PLoad static</div><div class="line">MethodLoad static </div><div class="line">PLoad class</div><div class="line">PLoad Construtor</div><div class="line">MethodLoad class</div><div class="line">MethodLoad Construtor</div></pre></td></tr></table></figure>
+<h3 id="2-ArrayList、LinkedList、Vector、Stack"><a href="#2-ArrayList、LinkedList、Vector、Stack" class="headerlink" title="2. ArrayList、LinkedList、Vector、Stack"></a>2. ArrayList、LinkedList、Vector、Stack</h3><p><code>ArrayList、Vector</code> ：底层用数组, 如果数据多为取数据，遍历数据就用</p>
+<ul>
+<li><code>ArrayList</code>: 线程不安全，适用于单线程，效率更高</li>
+<li><code>Vector</code>: 线程安全，一般用于多线程，效率比 ArrayList 低</li>
+<li>时间复杂度<ul>
+<li>取、遍历：O(1)</li>
+<li>插入或者删除：O(N)</li>
+</ul>
+</li>
+</ul>
+<p><code>LinkedList</code>: 底层用链表实现，如果数据多为添加、删除、更改就采用</p>
+<ul>
+<li>时间复杂度<ul>
+<li>取、遍历：O(N)</li>
+<li>插入或者删除：O(1)</li>
+</ul>
+</li>
+</ul>
+<p><code>Stack</code>: 先进后出</p>
+<ul>
+<li>FIFO</li>
+</ul>
+<h3 id="3-线程的创建方式"><a href="#3-线程的创建方式" class="headerlink" title="3.线程的创建方式?"></a>3.线程的创建方式?</h3><ol>
+<li>继承Thread</li>
+<li>实现Runnable<ol>
+<li>一般来说这种比较好</li>
+</ol>
+</li>
+<li>从<code>线程池</code>中取</li>
+</ol>
+<h3 id="4-什么是线程池？为什么要使用线程池？线程池的原理和作用？"><a href="#4-什么是线程池？为什么要使用线程池？线程池的原理和作用？" class="headerlink" title="4. 什么是线程池？为什么要使用线程池？线程池的原理和作用？"></a>4. 什么是线程池？为什么要使用线程池？线程池的原理和作用？</h3><h2 id="JAVA"><a href="#JAVA" class="headerlink" title="JAVA"></a>JAVA</h2><h3 id="1-i-i-问题"><a href="#1-i-i-问题" class="headerlink" title="1. i++,++i 问题"></a>1. i++,++i 问题</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ChangeI</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</div><div class="line">        fun(i);</div><div class="line">        i = i++;</div><div class="line">        System.out.println(i);		<span class="comment">//0</span></div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</div><div class="line">        i++;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="2-String-StringBuffer-StringBuilder区别、应用场景"><a href="#2-String-StringBuffer-StringBuilder区别、应用场景" class="headerlink" title="2. String,StringBuffer,StringBuilder区别、应用场景"></a>2. String,StringBuffer,StringBuilder区别、应用场景</h3><p><code>String</code>: String 是不可变的对象,每次对 String 类型进行改变的时候其实都等同于生成了一个新的 String 对象，然后将指针指向新的 String 对象。经常改变内容的字符串最好不要用 String。</p>
+<p><code>StringBuffer</code>: 字符串缓冲，字符串的字符追加或插入到字符串缓冲区中，<code>线程安全，多线程使用</code></p>
+<p><code>StringBuilder</code>: 字符串缓冲，字符串的字符追加或插入到字符串缓冲区中，<code>线程不安全，单线程使用，效率更高</code></p>
+<h3 id="3-什么是数组、链表？原理、时间复杂度、什么时候用？"><a href="#3-什么是数组、链表？原理、时间复杂度、什么时候用？" class="headerlink" title="3. 什么是数组、链表？原理、时间复杂度、什么时候用？"></a>3. 什么是数组、链表？原理、时间复杂度、什么时候用？</h3><h3 id="4-单例模式有哪几种？为什么要用？"><a href="#4-单例模式有哪几种？为什么要用？" class="headerlink" title="4. 单例模式有哪几种？为什么要用？"></a>4. 单例模式有哪几种？为什么要用？</h3><p><a href="http://www.gson8.com/2017/02/05/Java-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">单例模式有几种，可以看这里</a></p>
+<ul>
+<li>资源共享的情况下，避免由于资源操作时导致的性能或损耗等。如上述中的日志文件，应用配置。  </li>
+<li>控制资源的情况下，方便资源之间的互相通信。如线程池等。</li>
+<li>能避免实例重复创建、较节约内存</li>
+<li>应用于避免存在多个实例引起程序逻辑错误的场合</li>
+</ul>
+<h3 id="5-volatile-关键字的作用？"><a href="#5-volatile-关键字的作用？" class="headerlink" title="5. volatile 关键字的作用？"></a>5. volatile 关键字的作用？</h3><h3 id="6-HashMap-，HashSet-底层结构和其原理"><a href="#6-HashMap-，HashSet-底层结构和其原理" class="headerlink" title="6. HashMap ，HashSet 底层结构和其原理"></a>6. HashMap ，HashSet 底层结构和其原理</h3><h3 id="7-HashMap与HashSet区别、HashMap与TreeMap区别"><a href="#7-HashMap与HashSet区别、HashMap与TreeMap区别" class="headerlink" title="7.HashMap与HashSet区别、HashMap与TreeMap区别"></a>7.HashMap与HashSet区别、HashMap与TreeMap区别</h3><h3 id="8-ConcurrentHashMap-是做什么的？为什么要用这个而不是HashMap"><a href="#8-ConcurrentHashMap-是做什么的？为什么要用这个而不是HashMap" class="headerlink" title="8.ConcurrentHashMap 是做什么的？为什么要用这个而不是HashMap?"></a>8.ConcurrentHashMap 是做什么的？为什么要用这个而不是HashMap?</h3><h3 id="9-Overload、Override、Hide的区别"><a href="#9-Overload、Override、Hide的区别" class="headerlink" title="9. Overload、Override、Hide的区别?"></a>9. Overload、Override、Hide的区别?</h3><h3 id="10-接口，抽象类的区别"><a href="#10-接口，抽象类的区别" class="headerlink" title="10. 接口，抽象类的区别"></a>10. 接口，抽象类的区别</h3><h3 id="11-try-catch-finally-return-顺序"><a href="#11-try-catch-finally-return-顺序" class="headerlink" title="11. try-catch-finally, return 顺序"></a>11. try-catch-finally, return 顺序</h3><h3 id="12-Object的hash-、equal-重写"><a href="#12-Object的hash-、equal-重写" class="headerlink" title="12. Object的hash()、equal()重写"></a>12. Object的hash()、equal()重写</h3><h3 id="13-Java的NIO跟BIO是什么？-有什么用？"><a href="#13-Java的NIO跟BIO是什么？-有什么用？" class="headerlink" title="13. Java的NIO跟BIO是什么？ 有什么用？"></a>13. Java的NIO跟BIO是什么？ 有什么用？</h3><h2 id="Java-Web"><a href="#Java-Web" class="headerlink" title="Java Web"></a>Java Web</h2><h3 id="1-什么是-J2EE"><a href="#1-什么是-J2EE" class="headerlink" title="1. 什么是 J2EE?"></a>1. 什么是 J2EE?</h3><p>J2EE是一套不同于传统开发的技术构造，包涵了很多组件，用来简化开发和部署，提高可移植性、安全性。</p>
+<h3 id="2-JSTL有哪些标签"><a href="#2-JSTL有哪些标签" class="headerlink" title="2. JSTL有哪些标签"></a>2. JSTL有哪些标签</h3><ul>
+<li>c</li>
+<li>fmt</li>
+</ul>
+<h3 id="3-JSP有哪些内置对象"><a href="#3-JSP有哪些内置对象" class="headerlink" title="3. JSP有哪些内置对象"></a>3. JSP有哪些内置对象</h3><ul>
+<li><code>request</code>: 客户端请求，来自POST、GET请求的参数都通过它</li>
+<li><code>response</code>: 响应客户端请求</li>
+<li><code>session</code>: 客户端与服务器的一次会话，从客户端连接到服务器开始，到断开连接结束</li>
+<li><code>out</code> : 向客户端输出内容</li>
+<li><code>page</code> : JSP页面本身，当前页面</li>
+<li><code>application</code> : 用于用户间数据共享，全局唯一，从服务器启动到关闭</li>
+<li><code>exception</code> : 服务器的异常信息</li>
+<li><code>pageContext</code> : JSP页面内的所有对象和名字空间的访问</li>
+<li><code>config</code> : Servlet配置信息</li>
+</ul>
+<h3 id="4-MVC、SpringMVC的了解"><a href="#4-MVC、SpringMVC的了解" class="headerlink" title="4.MVC、SpringMVC的了解"></a>4.MVC、SpringMVC的了解</h3><h3 id="5-用到哪些Spring的技术"><a href="#5-用到哪些Spring的技术" class="headerlink" title="5. 用到哪些Spring的技术"></a>5. 用到哪些Spring的技术</h3><h3 id="6-AOP是做什么的？怎么理解切入点？你在哪些在地方用到了AOP？通知Advice等"><a href="#6-AOP是做什么的？怎么理解切入点？你在哪些在地方用到了AOP？通知Advice等" class="headerlink" title="6.AOP是做什么的？怎么理解切入点？你在哪些在地方用到了AOP？通知Advice等"></a>6.AOP是做什么的？怎么理解切入点？你在哪些在地方用到了AOP？通知Advice等</h3><h2 id="JAVA-内存"><a href="#JAVA-内存" class="headerlink" title="JAVA 内存"></a>JAVA 内存</h2><h3 id="1-内存模型，堆、栈、静态方法区"><a href="#1-内存模型，堆、栈、静态方法区" class="headerlink" title="1.内存模型，堆、栈、静态方法区"></a>1.内存模型，堆、栈、静态方法区</h3><h3 id="2-什么是垃圾回收？回收什么对象？什么时候回收？回收算法是什么？"><a href="#2-什么是垃圾回收？回收什么对象？什么时候回收？回收算法是什么？" class="headerlink" title="2. 什么是垃圾回收？回收什么对象？什么时候回收？回收算法是什么？"></a>2. 什么是垃圾回收？回收什么对象？什么时候回收？回收算法是什么？</h3><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="1-手写快速排序法"><a href="#1-手写快速排序法" class="headerlink" title="1. 手写快速排序法"></a>1. 手写快速排序法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 递归与分冶</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</div><div class="line">  <span class="keyword">if</span> (left &lt; right) &#123;</div><div class="line">    <span class="keyword">int</span> pos = findQuickSortPosition(arr, left, right);</div><div class="line">    quickSort(arr, left, pos - <span class="number">1</span>);</div><div class="line">    quickSort(arr, pos + <span class="number">1</span>, right);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">findQuickSortPosition</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</div><div class="line">  <span class="keyword">int</span> tem = arr[left];</div><div class="line">  <span class="keyword">while</span> (left &lt; right) &#123;</div><div class="line">    <span class="keyword">while</span> (left &lt; right &amp;&amp; arr[right] &gt;= tem)</div><div class="line">      right--;</div><div class="line">    arr[left] = arr[right];</div><div class="line">    <span class="keyword">while</span> (left &lt; right &amp;&amp; arr[left] &lt;= tem)</div><div class="line">      left++;</div><div class="line">    arr[right] = arr[left];</div><div class="line">  &#125;</div><div class="line">  arr[left] = tem;</div><div class="line">  <span class="keyword">return</span> left;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="2-数据结构有哪些？"><a href="#2-数据结构有哪些？" class="headerlink" title="2.数据结构有哪些？"></a>2.数据结构有哪些？</h3><ul>
+<li>数组</li>
+<li>链表</li>
+<li>队列</li>
+<li>栈</li>
+<li>树</li>
+<li>图</li>
+</ul>
+<h3 id="3-图的最短路径怎么算？"><a href="#3-图的最短路径怎么算？" class="headerlink" title="3.图的最短路径怎么算？"></a>3.图的最短路径怎么算？</h3><h3 id="4-树有什么特点？平衡二叉树的特点是什么？"><a href="#4-树有什么特点？平衡二叉树的特点是什么？" class="headerlink" title="4. 树有什么特点？平衡二叉树的特点是什么？"></a>4. 树有什么特点？平衡二叉树的特点是什么？</h3><h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><h3 id="1-什么是事务？"><a href="#1-什么是事务？" class="headerlink" title="1.什么是事务？"></a>1.什么是事务？</h3><p>事务(Transaction)是访问并可能更新数据库中各种数据项的一个程序执行单元</p>
+<h3 id="2-MySQL事务跟Oracle事物有什么区别？"><a href="#2-MySQL事务跟Oracle事物有什么区别？" class="headerlink" title="2. MySQL事务跟Oracle事物有什么区别？"></a>2. MySQL事务跟Oracle事物有什么区别？</h3><p><code>Oracle事务</code></p>
+<ul>
+<li>隐式开启事务</li>
+</ul>
+<p><code>MySQL事物</code></p>
+<ul>
+<li>必须显式开启，要用 <code>start transaction</code> 开启</li>
+</ul>
+<h3 id="3-MySQL的存储引擎有哪些？它们的区别是什么？"><a href="#3-MySQL的存储引擎有哪些？它们的区别是什么？" class="headerlink" title="3. MySQL的存储引擎有哪些？它们的区别是什么？"></a>3. MySQL的存储引擎有哪些？它们的区别是什么？</h3><p><code>innoDB</code>:</p>
+<ul>
+<li>支持数据库事务和外键等</li>
+<li>不扶持FULLTEXT类型</li>
+<li>不保存表的具体行数</li>
+<li>写、修改、删除 操作多时用</li>
+</ul>
+<p><code>MyiSam</code>:</p>
+<ul>
+<li>不支持数据库事务</li>
+<li>支持FULLTEXT类型</li>
+<li>保存表的具体行数，用的时候直接读就可以</li>
+<li>强调性能，速度更快</li>
+<li>读，查询 操作多用</li>
+</ul>
+<h3 id="4-MySQL数据库跟Oracle数据库有什么区别？"><a href="#4-MySQL数据库跟Oracle数据库有什么区别？" class="headerlink" title="4. MySQL数据库跟Oracle数据库有什么区别？"></a>4. MySQL数据库跟Oracle数据库有什么区别？</h3><ol>
+<li>Oracle是大型数据库，MySQL是中小型数据库。</li>
+<li>Oracle支持大并发，在访问量</li>
+<li>MySQL有<code>AUTO_INCREAMENT</code>，Oracle没有这个属性，但是有<code>ROWNUM</code></li>
+<li>Oracle是提供了非常丰富的功能，而MySQL只提供了基本的关系型数据库的功</li>
+</ol>
+<h3 id="5-Oracle中函数与过程的区别？还有包"><a href="#5-Oracle中函数与过程的区别？还有包" class="headerlink" title="5. Oracle中函数与过程的区别？还有包"></a>5. Oracle中函数与过程的区别？还有包</h3><p><code>函数</code>：</p>
+<ul>
+<li>只有一个返回值</li>
+<li>可在SQL语句中直接调用</li>
+</ul>
+<p><code>过程</code>： </p>
+<ul>
+<li>没有返回值，通过参数指定返回值，in, out , inout,类型，out类型相当于返回值，可以有多个</li>
+<li>不能在SQL运行，只能通过 call 命令调用</li>
+</ul>
+<p><code>包</code>：</p>
+<ul>
+<li>包可以封装<code>过程</code>和<code>函数</code>，包类似JAVA中实现接口的类。</li>
+</ul>
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><h3 id="1-JavaScript怎么体现封装、多态、继承"><a href="#1-JavaScript怎么体现封装、多态、继承" class="headerlink" title="1. JavaScript怎么体现封装、多态、继承"></a>1. JavaScript怎么体现封装、多态、继承</h3><p><a href="https://github.com/Kelichao/javascript.basics/issues/2" target="_blank" rel="external">这里可以理解更多</a></p>
+<p><strong>封装</strong> : 闭包就是函数里面包函数，由于prototype是通过函数名，指到其他内存空间独立的函数体，因此没法取得闭包的作用域变量。</p>
+<p><strong>多态</strong> : JS 天生支持多态</p>
+<p><strong>继承</strong>: 原型，功能是将对象的属性延续下去通过<code>call()</code>方法</p>
+<h3 id="2-Jquery-有哪些选择器"><a href="#2-Jquery-有哪些选择器" class="headerlink" title="2. Jquery 有哪些选择器"></a>2. Jquery 有哪些选择器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1. $(&quot;*&quot;),所有元素</div><div class="line">2. $(&quot;#abc&quot;),ID选择器</div><div class="line">3. $(&quot;.abc&quot;),类选择器</div><div class="line">4. $(&quot;p&quot;),标签名选择器，所有的p</div></pre></td></tr></table></figure>
+<h3 id="3-画表格"><a href="#3-画表格" class="headerlink" title="3. 画表格"></a>3. 画表格</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">td</span> <span class="attr">rowspan</span>=<span class="string">2</span> <span class="attr">colspan</span>=<span class="string">4</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="4-ajax请求网络数据"><a href="#4-ajax请求网络数据" class="headerlink" title="4. ajax请求网络数据"></a>4. ajax请求网络数据</h3><p>ajax请求网络很少用，下面写一种我常用的JavaScript网络请求</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">fetch(<span class="string">'http://localhost/?id=1'</span>)</div><div class="line">.then(<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> res.json();</div><div class="line">&#125;)</div><div class="line">.then(<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(res);</div><div class="line">&#125;)</div><div class="line">.catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(err);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><h3 id="1-TCP-UDP区别，TCP-IP的3次握手，4次分手"><a href="#1-TCP-UDP区别，TCP-IP的3次握手，4次分手" class="headerlink" title="1. TCP/UDP区别，TCP/IP的3次握手，4次分手"></a>1. TCP/UDP区别，TCP/IP的3次握手，4次分手</h3><img src="/2017/03/29/2017-3JAVA面试总结/TCP_IP.jpg" alt="TCP_IP.jpg" title="">
+<h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><h3 id="1-什么是线程？什么是进程？"><a href="#1-什么是线程？什么是进程？" class="headerlink" title="1. 什么是线程？什么是进程？"></a>1. 什么是线程？什么是进程？</h3>
       
     </div>
 
@@ -447,6 +616,14 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JAVA/" rel="tag"># JAVA</a>
+          
+            <a href="/tags/Resume/" rel="tag"># Resume</a>
+          
+        </div>
       
 
       
@@ -514,8 +691,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -541,7 +727,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -577,6 +763,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2017-3JAVA面试总结"><span class="nav-number">1.</span> <span class="nav-text">2017.3JAVA面试总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概率高"><span class="nav-number">1.1.</span> <span class="nav-text">概率高</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-代码的加载顺序"><span class="nav-number">1.1.1.</span> <span class="nav-text">1. 代码的加载顺序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-创建父类"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">1).创建父类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-创建子类"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">2). 创建子类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-ArrayList、LinkedList、Vector、Stack"><span class="nav-number">1.1.2.</span> <span class="nav-text">2. ArrayList、LinkedList、Vector、Stack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-线程的创建方式"><span class="nav-number">1.1.3.</span> <span class="nav-text">3.线程的创建方式?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-什么是线程池？为什么要使用线程池？线程池的原理和作用？"><span class="nav-number">1.1.4.</span> <span class="nav-text">4. 什么是线程池？为什么要使用线程池？线程池的原理和作用？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JAVA"><span class="nav-number">1.2.</span> <span class="nav-text">JAVA</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-i-i-问题"><span class="nav-number">1.2.1.</span> <span class="nav-text">1. i++,++i 问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-String-StringBuffer-StringBuilder区别、应用场景"><span class="nav-number">1.2.2.</span> <span class="nav-text">2. String,StringBuffer,StringBuilder区别、应用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-什么是数组、链表？原理、时间复杂度、什么时候用？"><span class="nav-number">1.2.3.</span> <span class="nav-text">3. 什么是数组、链表？原理、时间复杂度、什么时候用？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-单例模式有哪几种？为什么要用？"><span class="nav-number">1.2.4.</span> <span class="nav-text">4. 单例模式有哪几种？为什么要用？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-volatile-关键字的作用？"><span class="nav-number">1.2.5.</span> <span class="nav-text">5. volatile 关键字的作用？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-HashMap-，HashSet-底层结构和其原理"><span class="nav-number">1.2.6.</span> <span class="nav-text">6. HashMap ，HashSet 底层结构和其原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-HashMap与HashSet区别、HashMap与TreeMap区别"><span class="nav-number">1.2.7.</span> <span class="nav-text">7.HashMap与HashSet区别、HashMap与TreeMap区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-ConcurrentHashMap-是做什么的？为什么要用这个而不是HashMap"><span class="nav-number">1.2.8.</span> <span class="nav-text">8.ConcurrentHashMap 是做什么的？为什么要用这个而不是HashMap?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-Overload、Override、Hide的区别"><span class="nav-number">1.2.9.</span> <span class="nav-text">9. Overload、Override、Hide的区别?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-接口，抽象类的区别"><span class="nav-number">1.2.10.</span> <span class="nav-text">10. 接口，抽象类的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-try-catch-finally-return-顺序"><span class="nav-number">1.2.11.</span> <span class="nav-text">11. try-catch-finally, return 顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-Object的hash-、equal-重写"><span class="nav-number">1.2.12.</span> <span class="nav-text">12. Object的hash()、equal()重写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-Java的NIO跟BIO是什么？-有什么用？"><span class="nav-number">1.2.13.</span> <span class="nav-text">13. Java的NIO跟BIO是什么？ 有什么用？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-Web"><span class="nav-number">1.3.</span> <span class="nav-text">Java Web</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-什么是-J2EE"><span class="nav-number">1.3.1.</span> <span class="nav-text">1. 什么是 J2EE?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-JSTL有哪些标签"><span class="nav-number">1.3.2.</span> <span class="nav-text">2. JSTL有哪些标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-JSP有哪些内置对象"><span class="nav-number">1.3.3.</span> <span class="nav-text">3. JSP有哪些内置对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-MVC、SpringMVC的了解"><span class="nav-number">1.3.4.</span> <span class="nav-text">4.MVC、SpringMVC的了解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-用到哪些Spring的技术"><span class="nav-number">1.3.5.</span> <span class="nav-text">5. 用到哪些Spring的技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-AOP是做什么的？怎么理解切入点？你在哪些在地方用到了AOP？通知Advice等"><span class="nav-number">1.3.6.</span> <span class="nav-text">6.AOP是做什么的？怎么理解切入点？你在哪些在地方用到了AOP？通知Advice等</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JAVA-内存"><span class="nav-number">1.4.</span> <span class="nav-text">JAVA 内存</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-内存模型，堆、栈、静态方法区"><span class="nav-number">1.4.1.</span> <span class="nav-text">1.内存模型，堆、栈、静态方法区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-什么是垃圾回收？回收什么对象？什么时候回收？回收算法是什么？"><span class="nav-number">1.4.2.</span> <span class="nav-text">2. 什么是垃圾回收？回收什么对象？什么时候回收？回收算法是什么？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法"><span class="nav-number">1.5.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-手写快速排序法"><span class="nav-number">1.5.1.</span> <span class="nav-text">1. 手写快速排序法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-数据结构有哪些？"><span class="nav-number">1.5.2.</span> <span class="nav-text">2.数据结构有哪些？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-图的最短路径怎么算？"><span class="nav-number">1.5.3.</span> <span class="nav-text">3.图的最短路径怎么算？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-树有什么特点？平衡二叉树的特点是什么？"><span class="nav-number">1.5.4.</span> <span class="nav-text">4. 树有什么特点？平衡二叉树的特点是什么？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库"><span class="nav-number">1.6.</span> <span class="nav-text">数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-什么是事务？"><span class="nav-number">1.6.1.</span> <span class="nav-text">1.什么是事务？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-MySQL事务跟Oracle事物有什么区别？"><span class="nav-number">1.6.2.</span> <span class="nav-text">2. MySQL事务跟Oracle事物有什么区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-MySQL的存储引擎有哪些？它们的区别是什么？"><span class="nav-number">1.6.3.</span> <span class="nav-text">3. MySQL的存储引擎有哪些？它们的区别是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-MySQL数据库跟Oracle数据库有什么区别？"><span class="nav-number">1.6.4.</span> <span class="nav-text">4. MySQL数据库跟Oracle数据库有什么区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Oracle中函数与过程的区别？还有包"><span class="nav-number">1.6.5.</span> <span class="nav-text">5. Oracle中函数与过程的区别？还有包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript"><span class="nav-number">1.7.</span> <span class="nav-text">JavaScript</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-JavaScript怎么体现封装、多态、继承"><span class="nav-number">1.7.1.</span> <span class="nav-text">1. JavaScript怎么体现封装、多态、继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Jquery-有哪些选择器"><span class="nav-number">1.7.2.</span> <span class="nav-text">2. Jquery 有哪些选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-画表格"><span class="nav-number">1.7.3.</span> <span class="nav-text">3. 画表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-ajax请求网络数据"><span class="nav-number">1.7.4.</span> <span class="nav-text">4. ajax请求网络数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络"><span class="nav-number">1.8.</span> <span class="nav-text">网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-TCP-UDP区别，TCP-IP的3次握手，4次分手"><span class="nav-number">1.8.1.</span> <span class="nav-text">1. TCP/UDP区别，TCP/IP的3次握手，4次分手</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作系统"><span class="nav-number">1.9.</span> <span class="nav-text">操作系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-什么是线程？什么是进程？"><span class="nav-number">1.9.1.</span> <span class="nav-text">1. 什么是线程？什么是进程？</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
